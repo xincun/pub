@@ -642,12 +642,13 @@ BxXpCIejJKlHavTMvw==
         except:
             sa = '0.0.0.0'
         ips.append( sa )
-        ips.append('0.0.0.0')
     else:
         import commands
         r = commands.getoutput( 'ip addr' )
         ips = re.findall( 'inet ([\d\.]+)/', r )
 #ips.remove( '127.0.0.1' )
+
+    ips.append('0.0.0.0')
     for ip in ips:
         h = 'https' if usessl else 'http'
         print "Serving on %s://%s:%d/%s" % ( h, ip, port, fname  )
