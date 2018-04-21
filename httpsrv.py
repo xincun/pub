@@ -642,6 +642,7 @@ BxXpCIejJKlHavTMvw==
         except:
             sa = '0.0.0.0'
         ips.append( sa )
+        ips.append('0.0.0.0')
     else:
         import commands
         r = commands.getoutput( 'ip addr' )
